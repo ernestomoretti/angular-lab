@@ -10,7 +10,6 @@
 </head>
 <body ng-controller="PhoneListCtrl">
 
-Order by {{orderProp}}
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
@@ -20,7 +19,7 @@ Order by {{orderProp}}
         Sort by:
         <select ng-model="orderProp">
           <option value="name">Alphabetical</option>
-          <option value="- age">Oldest</option>
+          <option value="age">Newest</option>
         </select>
 
       </div>
@@ -37,6 +36,6 @@ Order by {{orderProp}}
       </div>
     </div>
   </div>
-
+<pre>{{phones | filter:query | orderBy:orderProp | json}}</pre>
 </body>
 </html>
