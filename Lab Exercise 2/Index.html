@@ -1,0 +1,19 @@
+<html ng-app="starredGitRepoApp">
+<head>
+  <script src="angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="js/services.js"></script>
+</head>
+<body ng-controller="GitRepoCtrl">
+<h2>Starred Repository</h2>
+<div> User repository : <input ng-model="repoName">
+<button ng-click="setUserRepo()">Load</button></div>
+  <ul>
+    <li ng-repeat="repo in repositories">
+      <span>Repository Name: {{repo.name}}</span>
+      <p>Number of stars:{{repo.stargazers_count}}</p>
+    </li>
+  </ul>
+</body>
+</html>
