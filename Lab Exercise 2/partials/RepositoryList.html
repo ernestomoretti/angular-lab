@@ -1,0 +1,26 @@
+<h2>Starred Repositories</h2>
+<div>
+<button ng-click="handleBtnClick()">Login</button>
+</div>
+<div> User Name : <input ng-model="repoName">
+<button ng-click="setUserRepo()">Load</button></div>
+
+<div>
+Search: <input ng-model="searchFilter">
+</div>
+
+<div> Order by:
+	<select ng-model="orderProp">
+	  <option value="name">Alphabetical</option>
+	  <option value="stargazers_count">Star Number</option>
+	</select>
+</div>
+<div>
+	  <ul>
+	    <li ng-repeat="repo in repositories |filter:{name:searchFilter} | orderBy:orderProp">
+	      <a href="#/repositories/{{repo.name}}">{{repo.name}}</a>
+	      <p>Number of stars:{{repo.stargazers_count}}</p>
+	      <p>contributors:{{repo.contributors}}</p>
+	    </li>
+	  </ul>
+ </div>
